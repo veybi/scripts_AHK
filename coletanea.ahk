@@ -9,13 +9,15 @@ Gui, Margin, 20, 20
 Gui, Font, underline
 Gui, Add, Text, cBlue gscript1, Help													Ctrl+Alt+H
 Gui, Add, Text, cBlue gscript2, Cola Paint												Ctrl+Alt+P
-Gui, Add, Text, cBlue gscript3, Quick Brow Fox											Ctrl+Alt+Q
+Gui, Add, Text, cBlue gscript3, Quick Brow Fox								    			Ctrl+Alt+Q
 Gui, Add, Text, cBlue gscript4, Pinga Externo e Servidor											Ctrl+Alt+M
 Gui, Add, Text, cBlue gscript5, Lista de frases												Ctrl+Alt+L
 Gui, Add, Text, cBlue gscript6, Paste Clipboard Content as pure text									Ctrl+Alt+L
 Gui, Add, Text, cBlue gscript7, Mazimize window to both monitors								       Win+Alt+Up
 Gui, Add, Text, cBlue gscript8, Open Notepad++											Ctrl+Alt+N
-Gui, Add, Text, cBlue gscript12, Studio Code											Ctrl+Alt+B
+Gui, Add, Text, cBlue gscript12, Studio Code										    	Ctrl+Alt+B
+Gui, Add, Text, cBlue gscript12, Time Tracker											    Ctrl+Alt+t
+Gui, Add, Text, cBlue gscript12, VPN settings											    Win+v
 Gui, Font
 Gui, Add, Text, cBlue gscript9, Disable F1											(Always active)
 Gui, Add, Text, cBlue gscript10, Disable CapsLock [shift + CapsLock is the new Caps]						(Always active)
@@ -58,6 +60,14 @@ return
 
 script12:
 open_studio_code()
+return
+
+script13:
+open_timetracker()
+return
+
+script14:
+open_vpn_settings()
 return
 
 script9:
@@ -288,3 +298,26 @@ open_studio_code(){
 Run C:\Users\Bruno.Bianchessi\AppData\Local\Programs\Microsoft VS Code\Code.exe
 return
 }
+
+
+; ==================================================================================
+; Script que abre o Studio Code
+; Created by Bruno Bianchessi
+; 28/05/19
+; ==================================================================================
+^!t::
+open_timetracker(){
+Run https://time.pensardevelopment.com/Internal/MainFrame.asp
+return
+}
+
+; ==================================================================================
+; Script que abre o Studio Code
+; Created by Bruno Bianchessi
+; 28/05/19
+; ==================================================================================
+<#v::
+open_vpn_settings(){
+Run ms-settings:network-vpn
+return
+}   
