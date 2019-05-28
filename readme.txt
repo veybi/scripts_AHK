@@ -1,0 +1,1 @@
+This directory contains a bunch of usefull scripts for Auto Hot Keys
