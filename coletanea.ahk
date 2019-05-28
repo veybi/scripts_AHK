@@ -307,7 +307,7 @@ return
 ; ==================================================================================
 ^!t::
 open_timetracker(){
-Run https://time.pensardevelopment.com/Internal/MainFrame.asp
+Run https://time.pensardevelopment.com/
 return
 }
 
