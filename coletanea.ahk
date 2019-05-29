@@ -27,12 +27,11 @@ return
 ; Create routines to auto-detect computer and change/block functionalities based on what computer the script is running
 <#o::
 MsgBox, 0,, %A_ComputerName%, 10
-; BBIAN-S2-18A - Pensar Laptop
-; ???			- Personal Laptop
+
 return
 
 ; ==================================================================================
-; GUI que lista todos os Scripts existentes
+; GUI to list all existent Scripts
 ; Created by Bruno Bianchessi
 ; 29/06/09
 ; ==================================================================================
@@ -41,16 +40,16 @@ help(){
 Gui, Margin, 20, 20
 Gui, Font, underline
 Gui, Add, Text, cBlue gscript1, Help													Ctrl+Alt+H
-Gui, Add, Text, cBlue gscript2, Cola Paint												Ctrl+Alt+P
+Gui, Add, Text, cBlue gscript2, Paste Paint												Ctrl+Alt+P
 Gui, Add, Text, cBlue gscript3, Quick Brow Fox								    			Ctrl+Alt+Q
-Gui, Add, Text, cBlue gscript4, Pinga Externo e Servidor											Ctrl+Alt+M
-Gui, Add, Text, cBlue gscript5, Lista de frases												Ctrl+Alt+L
+Gui, Add, Text, cBlue gscript4, Ping external websites and Server											Ctrl+Alt+M
+Gui, Add, Text, cBlue gscript5, List of phrases												Ctrl+Alt+L
 Gui, Add, Text, cBlue gscript6, Paste Clipboard Content as pure text									Ctrl+Alt+L
 Gui, Add, Text, cBlue gscript7, Mazimize window to both monitors								       Win+Alt+Up
 Gui, Add, Text, cBlue gscript8, Open Notepad++											Ctrl+Alt+N
-Gui, Add, Text, cBlue gscript12, Studio Code										    	Ctrl+Alt+B
-Gui, Add, Text, cBlue gscript13, Time Tracker											    Ctrl+Alt+t
-Gui, Add, Text, cBlue gscript14, VPN settings											    Win+v
+Gui, Add, Text, cBlue gscript12, Open Studio Code										    	Ctrl+Alt+B
+Gui, Add, Text, cBlue gscript13, Open Time Tracker											    Ctrl+Alt+t
+Gui, Add, Text, cBlue gscript14, Open VPN settings											    Win+v
 Gui, Font
 Gui, Add, Text, cBlue gscript9, Disable F1											(Always active)
 Gui, Add, Text, cBlue gscript10, Disable CapsLock [shift + CapsLock is the new Caps]						(Always active)
@@ -116,8 +115,8 @@ return
 }
 
 ; ==================================================================================
-; Script que copia a imagem da janela selecionada para a área de transferência, abre
-; o Paint e cola a imagem
+; Script copies the image from active window to the clipboard, opens Paint and paste
+; the image there
 ; Created by Bruno Bianchessi
 ; 18/02/09
 ; ==================================================================================
@@ -135,7 +134,7 @@ return
 }
 
 ; ==================================================================================
-; Script que insere um texto automático para avisar que estou ocupado.
+; Script inserts a string of text. Good for testing fonts, fill paragraphs, etc.
 ; Created by Bruno Bianchessi
 ; 20/05/09
 ; ==================================================================================
@@ -148,7 +147,7 @@ return
 }
 
 ; ==================================================================================
-; Script que começa a pingar externo e o servidor (para testar acesso a internet)
+; Script pings some external websites and the servidor (test internet access)
 ; Created by Bruno Bianchessi
 ; 29/12/11
 ; ==================================================================================
@@ -203,7 +202,7 @@ return
 }
 
 ; ==================================================================================
-; GUI que lista todas as frases existentes
+; GUI listing all existing phrases (not supported anymore, so the phrases won't be translated)
 ; Created by Bruno Bianchessi
 ; 09/05/11
 ; ==================================================================================
@@ -252,7 +251,8 @@ return
 }
 
 ; ==================================================================================
-; Mantém o CapsLock sempre desligado. Além de atribuir uma funcionalidade adicional.
+; Turns CapsLock off, it works like a regular Shift key now.
+; To toggle CapsLock, hold Shift and then press CapsLock
 ; Created by Bruno Bianchessi
 ; 19/03/11
 ; ==================================================================================
@@ -289,7 +289,7 @@ paste_plain_text(){
 }
 
 ; ==================================================================================
-; Script that maximizes the active window to both monitors
+; Script that maximizes the active window to both monitors (only works for a specific resolution and monitor array)
 ; Created by Bruno Bianchessi
 ; 01/28/19
 ; ==================================================================================
@@ -311,7 +311,7 @@ Pause::suspend
 }
 
 ; ==================================================================================
-; Script que abre o Notepad++
+; Script to open o Notepad++
 ; Created by Bruno Bianchessi
 ; 21/01/19
 ; ==================================================================================
@@ -322,7 +322,7 @@ return
 }
 
 ; ==================================================================================
-; Script que abre o Studio Code
+; Script to open Studio Code
 ; Created by Bruno Bianchessi
 ; 27/05/19
 ; ==================================================================================
@@ -334,7 +334,7 @@ return
 
 
 ; ==================================================================================
-; Script que abre o Time Tracker
+; Script to open Time Tracker
 ; Created by Bruno Bianchessi
 ; 28/05/19
 ; ==================================================================================
