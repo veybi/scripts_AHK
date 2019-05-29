@@ -1,3 +1,35 @@
+; ---------------------------------
+; Script access
+; ---------------------------------
+
+^!a::edit %A_ScriptName%					; Open current script in editor
+^!+a::run explorer.exe %A_ScriptDir%		; Open the current script's path
+
+GroupAdd, ThisScript, %A_ScriptName%		; Add any window containing this script's name to the group ThisScript
+											; This is used in the Auto-reload on save function
+; ---------------------------------
+; Auto-reload on save
+; ---------------------------------
+
+; Reloads script if active window is the script editor and Ctrl-S is send
+
+#IfWinActive ahk_group ThisScript						; Only run if met
+~^s::													; Otherwise, ignore hotkey
+	TrayTip, Reloading updated script, %A_ScriptName%
+	SetTimer, RemoveTrayTip, 2000
+	Sleep, 2000
+	Reload
+return
+#IfWinActive
+
+RemoveTrayTip:
+	; Used by several functions to kill the TrayTip
+	
+    SetTimer, RemoveTrayTip, Off 
+    TrayTip 
+return 
+
+
 ; ==================================================================================
 ; GUI que lista todos os Scripts existentes
 ; Created by Bruno Bianchessi
