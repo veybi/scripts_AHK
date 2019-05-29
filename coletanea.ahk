@@ -26,7 +26,7 @@ return
 
 ; Create routines to auto-detect computer and change/block functionalities based on what computer the script is running
 <#o::
-MsgBox, 0,, %A_ComputerName%
+MsgBox, 0,, %A_ComputerName%, 10
 ; BBIAN-S2-18A - Pensar Laptop
 ; ???			- Personal Laptop
 return
