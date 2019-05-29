@@ -13,24 +13,22 @@ GroupAdd, ThisScript, %A_ScriptName%		; Add any window containing this script's 
 
 ; Reloads script if active window is the script editor and Ctrl-S is send
 
-#IfWinActive ahk_group ThisScript						; Only run if met
+;#IfWinActive ahk_group ThisScript						; Only run if met
+#IfWinActive coletanea.ahk								; Only run if met
 ~^s::													; Otherwise, ignore hotkey
-	TrayTip, Reloading updated script, %A_ScriptName%
-	SetTimer, RemoveTrayTip, 2000
-	Sleep, 2000
-	Reload
+msgbox 0, Coletanea Messages, Scrip Reloaded Successfuly, 1
+Reload
+Sleep 1000 ; If successful, the reload will close this instance during the Sleep, so the line below will never be reached.
+MsgBox, 4,, The script could not be reloaded. Would you like to open it for editing?
+IfMsgBox, Yes, Edit
 return
 #IfWinActive
 
-RemoveTrayTip:
-	; Used by several functions to kill the TrayTip
-	
-    SetTimer, RemoveTrayTip, Off 
-    TrayTip 
-return 
-
+; Create routines to auto-detect computer and change/block functionalities based on what computer the script is running
 <#o::
 MsgBox, 0,, %A_ComputerName%
+; BBIAN-S2-18A - Pensar Laptop
+; ???			- Personal Laptop
 return
 
 ; ==================================================================================
@@ -51,8 +49,8 @@ Gui, Add, Text, cBlue gscript6, Paste Clipboard Content as pure text									Ctr
 Gui, Add, Text, cBlue gscript7, Mazimize window to both monitors								       Win+Alt+Up
 Gui, Add, Text, cBlue gscript8, Open Notepad++											Ctrl+Alt+N
 Gui, Add, Text, cBlue gscript12, Studio Code										    	Ctrl+Alt+B
-Gui, Add, Text, cBlue gscript12, Time Tracker											    Ctrl+Alt+t
-Gui, Add, Text, cBlue gscript12, VPN settings											    Win+v
+Gui, Add, Text, cBlue gscript13, Time Tracker											    Ctrl+Alt+t
+Gui, Add, Text, cBlue gscript14, VPN settings											    Win+v
 Gui, Font
 Gui, Add, Text, cBlue gscript9, Disable F1											(Always active)
 Gui, Add, Text, cBlue gscript10, Disable CapsLock [shift + CapsLock is the new Caps]						(Always active)
