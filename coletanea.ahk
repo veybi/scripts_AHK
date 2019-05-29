@@ -29,6 +29,9 @@ RemoveTrayTip:
     TrayTip 
 return 
 
+<#o::
+MsgBox, 0,, %A_ComputerName%
+return
 
 ; ==================================================================================
 ; GUI que lista todos os Scripts existentes
@@ -352,4 +355,4 @@ return
 open_vpn_settings(){
 Run ms-settings:network-vpn
 return
-}   
+} 
